@@ -1,0 +1,16 @@
+{% extends 'film_critic/base.html' %} {% block content %}
+
+<h2>{{ movie.title }}</h2>
+<img src="{{ movie.img_url }}" alt="">
+<h4>{{ movie.description }}</h4>
+<h3>Reviews <a href="">+Add</a></h3>
+<ul>
+    {% for review in movie.reviews.all %}
+    <li>
+        <a href="">{{ review.user }}</a>
+        <p>{{ review.description }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
