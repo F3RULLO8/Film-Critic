@@ -12,6 +12,10 @@ def movie_list(request):
     movies = Movie.objects.all()
     return render(request, 'film_critic/movie_list.html', {'movies': movies})
 
+def profile(request):
+    reviews = Review.objects.all()
+    return render(request, 'film_critic/profile.html', {'reviews': reviews})
+
 def movie_detail(request, pk):
     movie = Movie.objects.get(id=pk)
     return render(request, 'film_critic/movie_detail.html', {'movie': movie})

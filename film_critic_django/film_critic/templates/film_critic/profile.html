@@ -1,0 +1,13 @@
+{% extends 'film_critic/base.html' %} {% block content %}
+
+<h3> {{ user.username }} </h3>
+<ul>
+    {% for review in reviews %} {% if review.user == user.username %}
+    <li>
+        <p>{{ review.user }}</p>
+        <p>{{ review.description }}</p>
+    </li>
+    {% endif %} {% endfor %}
+</ul>
+
+{% endblock %}
