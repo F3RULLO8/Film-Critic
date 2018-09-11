@@ -7,6 +7,7 @@
         <p>{{ review.user }}</p>
         <p>{{ review.description }}</p>
         <p><a href="{% url 'review_edit' pk=review.pk %}">(edit)</a></p>
+        <p><a href="{% url 'review_delete' pk=review.pk %}">(delete)</a></p>
     </li>
     {% endif %} {% endfor %}
 </ul>

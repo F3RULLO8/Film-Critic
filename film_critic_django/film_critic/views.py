@@ -51,3 +51,7 @@ def review_edit(request, pk):
     else:
         form = ReviewForm(instance=review)
     return render(request, 'film_critic/review_form.html', {'form': form})
+
+def review_delete(request, pk):
+    Review.objects.get(id=pk).delete()
+    return redirect('profile')
