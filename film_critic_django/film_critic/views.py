@@ -40,3 +40,14 @@ def review_create(request):
     else:
         form = ReviewForm()
     return render(request, 'film_critic/review_form.html', {'form': form})
+
+def review_edit(request, pk):
+    review = Review.objects.get(pk=pk)
+    if request.method == "POST":
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            movie = form.save()
+            return redirect('profile')
+    else:
+        form = ReviewForm(instance=review)
+    return render(request, 'film_critic/review_form.html', {'form': form})

@@ -6,6 +6,7 @@
     <li>
         <p>{{ review.user }}</p>
         <p>{{ review.description }}</p>
+        <p><a href="{% url 'review_edit' pk=review.pk %}">(edit)</a></p>
     </li>
     {% endif %} {% endfor %}
 </ul>
