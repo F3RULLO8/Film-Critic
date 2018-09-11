@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django_extensions',
 ]
 
+LOGIN_REDIRECT_URL = 'movie_list'
+LOGOUT_REDIRECT_URL = 'movie_list'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

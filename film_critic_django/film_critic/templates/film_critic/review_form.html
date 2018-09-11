@@ -1,0 +1,9 @@
+{% extends 'film_critic/base.html' %} {% block content %}
+<h3>Create Review</h3>
+<form method="POST">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Post</button>
+</form>
+<button><a href="/">Go back</a></button>
+
+{% endblock %}
