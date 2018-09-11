@@ -7,7 +7,7 @@
 <ul>
     {% for review in movie.reviews.all %}
     <li>
-        <a href="">{{ review.user }}</a>
+        <a>{{ review.user }}</a>
         <p>{{ review.description }}</p>
     </li>
     {% endfor %}

@@ -9,12 +9,12 @@
 <body>
     <h1>Film Critic</h1>
     <nav>
-        <a href="/">Movies</a>
-        <div class="user-info">
-            {% if user.is_authenticated %} Welcome, {{ user.username }}
+        <div>
+            <a href="/">Movies</a>
+            {% if user.is_authenticated %}
             <a href="{% url 'profile' %}">Profile</a>
             <a href="{% url 'review_create' %}">Create a Review</a>
-            <a href="{% url 'logout' %}">Signout</a>
+            <a href="{% url 'logout' %}">Sign Out</a>
             {% else %}
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'signup' %}">Sign Up</a>
