@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'film_critic',
     'django_extensions',
+    'gunicorn'
 ]
 
 LOGIN_REDIRECT_URL = 'movie_list'
