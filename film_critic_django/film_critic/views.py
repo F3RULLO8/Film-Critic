@@ -8,6 +8,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Movie, Review
 from .forms import ReviewForm
 
+from django.contrib.auth.decorators import login_required
+
 def movie_list(request):
     movies = Movie.objects.all()
     return render(request, 'film_critic/movie_list.html', {'movies': movies})
@@ -31,6 +33,7 @@ def sign_up(request):
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 
+@login_required
 def review_create(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -41,6 +44,7 @@ def review_create(request):
         form = ReviewForm()
     return render(request, 'film_critic/review_form.html', {'form': form})
 
+@login_required
 def review_edit(request, pk):
     review = Review.objects.get(pk=pk)
     if request.method == "POST":
@@ -52,6 +56,7 @@ def review_edit(request, pk):
         form = ReviewForm(instance=review)
     return render(request, 'film_critic/review_form.html', {'form': form})
 
+@login_required
 def review_delete(request, pk):
     Review.objects.get(id=pk).delete()
     return redirect('profile')
