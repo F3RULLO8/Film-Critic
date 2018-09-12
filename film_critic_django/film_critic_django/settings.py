@@ -25,7 +25,7 @@ SECRET_KEY = 'x=h23$3m9s(rt73l9da+w$!z)u!^^keezupt8)o%sa&w^^j-**'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [‘0.0.0.0’, ‘localhost’, ’https://film-critic.herokuapp.com/’]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'film_critic',
     'django_extensions',
-    'gunicorn'
 ]
 
 LOGIN_REDIRECT_URL = 'movie_list'
@@ -127,6 +126,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, ‘staticfiles’)
 
