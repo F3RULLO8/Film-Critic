@@ -6,6 +6,8 @@ An application to explore movies and to read reviews written by anyone to see if
 ![Example](/Planning/film_critic_example.png)
 
 ![Example2](/Planning/film_critic_example_2.png)
+
+![Example2](/Planning/film_critic_example_3.png)
 ## List of Features 
 * User Sign Up/Login/Log Out functionality.
 * User authorization needed for create, update, and delete capabilites.
