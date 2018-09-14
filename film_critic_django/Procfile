@@ -1,1 +1,1 @@
-web: gunicorn film_critic_django.wsgi —-log-file -
+web: gunicorn film_critic_django.wsgi

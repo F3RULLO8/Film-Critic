@@ -6,7 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import Movie, Review
-from .forms import ReviewForm
+from .forms import ReviewForm, MovieForm
 
 from django.contrib.auth.decorators import login_required
 
@@ -21,6 +21,17 @@ def profile(request):
 def movie_detail(request, pk):
     movie = Movie.objects.get(id=pk)
     return render(request, 'film_critic/movie_detail.html', {'movie': movie})
+
+@login_required
+def movie_create(request):
+    if request.method == 'POST':
+        form = MovieForm(request.POST)
+        if form.is_valid():
+            movie = form.save()
+            return redirect('movie_list')
+    else:
+        form = MovieForm()
+    return render(request, 'film_critic/movie_form.html', {'form': form})
 
 def sign_up(request):
     if request.method == 'POST':

@@ -1,0 +1,24 @@
+h1,
+h2,
+img,
+h4,
+h3,
+h5 {
+  text-align: center;
+}
+img {
+  height: 400px;
+}
+.detail-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.card {
+  background-color: rgb(78, 78, 78);
+}
+body {
+  color: rgb(255, 255, 255);
+  background-color: rgb(56, 56, 56);
+}

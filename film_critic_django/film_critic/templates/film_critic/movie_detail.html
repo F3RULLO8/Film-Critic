@@ -1,16 +1,28 @@
 {% extends 'film_critic/base.html' %} {% block content %}
-
-<h2>{{ movie.title }}</h2>
-<img src="{{ movie.img_url }}" alt="">
-<h4>{{ movie.description }}</h4>
-<h3> Reviews </h3>
-<ul>
-    {% for review in movie.reviews.all %}
-    <li>
-        <a>{{ review.user }}</a>
-        <p>{{ review.description }}</p>
-    </li>
-    {% endfor %}
-</ul>
-
+<div class="container" style="margin-top:30px;">
+    <div class="row">
+        <div class="col-12">
+            <h2>{{ movie.title }}</h2>
+        </div>
+        <div class="col-sm-12 col-md-6" style="margin-top:30px;">
+            <img class="detail-img" src="{{ movie.img_url }}" alt="">
+        </div>
+        <div class="col-sm-12 col-md-6" style="margin-top:30px;">
+            <h5>{{ movie.description }}</h5>
+        </div>
+        <div class="col-12" style="margin-top:30px;">
+            <h3> Reviews </h3>
+        </div>
+        {% for review in movie.reviews.all %}
+        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-top:30px;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ review.user }}</h5>
+                    <p class="card-text">{{ review.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
