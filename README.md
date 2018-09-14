@@ -19,3 +19,4 @@ An application to explore movies and to read reviews written by anyone to see if
 * Django
 * Bootstrap
 * Heroku 
+* pSQL
